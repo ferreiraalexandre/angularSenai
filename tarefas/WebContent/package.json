@@ -1,8 +1,10 @@
-
 {
-	"dependencies": {
-		"jquery": "2.2.4",
-		"bootstrap": "3.3.6",
-		"angular": "1.5.7"
-	}
+  "dependencies": {
+    "angular": "1.5.7",
+    "angular-animate": "^1.5.9",
+    "angular-router": "0.0.2",
+    "angularjs-toaster": "^2.1.0",
+    "bootstrap": "3.3.6",
+    "jquery": "2.2.4"
+  }
 }
