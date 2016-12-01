@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	
-	angular.module("tarefas").controller("TarefaController",Controller);
+	angular.module("tarefas").controller("tarefaFormController",Controller);
 	
 	Controller.$inject = ["lowercaseFilter","tarefasFactory","toaster"];
 	

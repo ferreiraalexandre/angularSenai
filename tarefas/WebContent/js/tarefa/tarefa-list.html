@@ -1,0 +1,36 @@
+	<div>
+		<div class="col-sm-4 col-sm-offset-8">
+			<div class="input-group">
+				<input class="form-control" ng-model="controller.pesquisa">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="controller.int(tarefa)">Pesquisar</button>
+					<button type="button" class="btn btn-primary">Novo</button>
+				</div>
+			</div>
+		</div>
+		<div class="table-responsive col-sm-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Resumo</th>
+						<th>Descrição</th>
+						<th>Prazo</th>
+						<th>Situação</th>
+						<th>Opções</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="tarefa in controller.tarefas | filter:controller.pesquisa">
+						<td>{{tarefa.resumo | uppercase}}</td>
+						<td>{{tarefa.descricao | capitalize}}</td>
+						<td>{{tarefa.prazo | date:'dd/MM/yyyy'}}</td>
+						<td>{{tarefa.situacao}}</td>
+						<td>
+							<button type="button" class="btn btn-warning" ng-click="controller.selecionarTarefa(tarefa)">Editar</button>
+							<button type="button" class="btn btn-danger" ng-click="controller.removerTarefa(tarefa)">Remover</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>

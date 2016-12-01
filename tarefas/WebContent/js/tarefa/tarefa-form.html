@@ -1,0 +1,54 @@
+	<div>
+		<form class="form-horizontal" name="myForm" ng-submit="submitForm()" novalidate>
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2>Tarefa</h2>
+					</div>
+					<div class="panel-body">
+						<json data="controller.tarefa"></json>
+						<div class="form-group" ng-class="{ 'has-error' : myForm.resumo.$invalid && !myForm.resumo.$pristine }">
+							<label class="control-label col-sm-3" for="resumo">Resumo</label>
+							<div class="col-sm-9">
+								<input id="resumo" name="resumo" class="form-control"  ng-model="controller.tarefa.resumo" required />
+								<p ng-show="myForm.resumo.$invalid && !myForm.resumo.$pristine" class="help-block">Resumo é obrigatório</p>
+  						</div>
+					</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="descricao">Descrição</label>
+							<div class="col-sm-9">
+								<textarea id="descricao" name="descricao" class="form-control" ng-model="controller.tarefa.descricao" rows="6"></textarea>
+							</div>
+						</div>
+						<div class="form-group" ng-class="{ 'has-error' : myForm.prazo.$invalid && !myForm.prazo.$pristine }">
+							<label class="control-label col-sm-3" for="prazo">Prazo</label>
+							<div class="col-sm-9">
+								<input type="text" id="prazo" name="prazo" class="form-control" date-format ng-model="controller.tarefa.prazo" required ng-pattern="/^\d{2}\/\d{2}\/\d{4}$/"/>
+								<div ng-messages="myForm.prazo.$error" class="help-block" ng-if="myForm.prazo.$dirty && myForm.prazo.$invalid">
+									<p ng-message="required">Campo Obrigatorio</p>
+									<p ng-message="pattern">formato 00/00/0000</p>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-3" for="situacao">Situação</label>
+							<div class="col-sm-9">
+								<select id="situacao" name="situacao" class="form-control" ng-model="controller.tarefa.situacao">
+									<option value="">Selecione...</option>
+									<option value="Pendente">Pendente</option>
+									<option value="Concluído">Concluído</option>
+								</select>
+							</div>
+						</div>
+	
+					<div class="panel-footer text-right">
+					 	<button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="controller.salvarTarefa(controller.tarefa)">Salvar</button>
+					 	<button type="button" class="btn btn-default" ng-click="controller.novaTarefa()">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+	</div>

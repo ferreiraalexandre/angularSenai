@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
 	
-	angular.module("tarefas",['ngResource', 'ngMessages','toaster', 'ngAnimate']);
+	angular.module("tarefas",['ngResource', 'ngMessages','toaster', 'ngAnimate','ui.router']);
 
 })();
