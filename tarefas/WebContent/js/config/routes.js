@@ -32,6 +32,5 @@
 			controllerAs:"controller"
 		})
 		
-		
 	}
 })();
